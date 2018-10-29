@@ -1,6 +1,6 @@
 // Dependencies
 const discord = require('discord.js');
-const bot = new discord.Client({disableEveryone: true});
+const bot = new Discord.Client({disableEveryone: true});
 const config = require('./config.json');
 
 // Startup of the bot
