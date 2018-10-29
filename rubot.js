@@ -1,6 +1,6 @@
 // Dependencies
 const discord = require('discord.js');
-const bot = new Discord.Client({disableEveryone: true});
+const bot = new discord.Client({disableEveryone: true});
 const config = require('./config.json');
 
 // Startup of the bot
@@ -23,7 +23,7 @@ bot.on("message", async message => {
     message.channel.send('crist is gay lol');
   }
   if(cmd === `${prefix}botinfo`){
-  let embed = new Discord.RichEmbed()
+  let embed = new discord.RichEmbed()
     .setTitle("Bot Info")
     .setColor("ff0000")
     .setThumbnail(bot.user.displayAvatarURL)
@@ -31,7 +31,7 @@ bot.on("message", async message => {
     .addField("Version", `0.0.1 Pre-Alpha`)
     .addField("Developed by", `<@306104099185623042> & <@330863976504229899>`)
     .addField("Created on", "28th of October 2018");
-  message.channel.send(embed)
+  message.channel.send(embed);
   }
 
 });
