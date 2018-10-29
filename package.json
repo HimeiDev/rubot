@@ -1,0 +1,41 @@
+{
+  "name": "rubot",
+  "version": "0.0.1",
+  "description": "a basic multi-purpose bot",
+  "main": "bot.js",
+  "scripts": {
+    "start": "now script launched!"
+  },
+  "author": "crist",
+  "license": "ISC",
+  "dependencies": {
+    "bufferutil": "^4.0.0",
+    "cheerio": "^1.0.0-rc.2",
+    "discord-eco": "0.0.10",
+    "discord.js": "^11.4.2",
+    "ffmpeg": "0.0.4",
+    "ffmpeg-binaries": "^4.0.0",
+    "fortnite": "^4.1.1",
+    "google": "^2.1.0",
+    "mal-scraper": "^2.4.5",
+    "moment": "^2.22.2",
+    "moment-duration-format": "^2.2.2",
+    "mongodb": "^3.1.8",
+    "mongoose": "^5.2.10",
+    "ms": "^2.1.1",
+    "nekos.life": "^1.1.4",
+    "node-gyp": "^3.8.0",
+    "npm": "^6.4.1",
+    "opusscript": "0.0.6",
+    "rebuild": "^0.1.2",
+    "request": "^2.88.0",
+    "superagent": "^3.8.3",
+    "url": "^0.11.0",
+    "util": "^0.11.0",
+    "yt-search": "^0.2.0",
+    "ytdl-core": "^0.25.2"
+  },
+  "devDependencies": {
+    "eslint": "^5.1.0"
+  }
+}
