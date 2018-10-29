@@ -24,6 +24,7 @@ bot.on("message", async message => {
   }
   if(cmd === `${prefix}botinfo`){
   let infoembed = new Discord.RichEmbed()
+  let package = "./package.json"
     .setTitle("Bot Info")
     .setColor("#ff0000")
     .setThumbnail(bot.user.displayAvatarURL)
