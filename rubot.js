@@ -33,6 +33,16 @@ bot.on("message", async message => {
     .addField("Created on", "28th of October 2018");
   message.channel.send(embed);
   }
+  if(cmd === `${prefix}suggest`){
+    let suggestiontext = args.slice(0).join(" ");
+    if (!suggestiontext) return message.channel.send(`Please enter a valid suggestion following the command!`);
+    let suggestion = new discord.RichEmbed()
+    .setTitle(message.author)
+    .setThumbnail(message.author.displayAvatarURL)
+    .setColor("ff0000")
+    .setDescription(`${suggestiontext}`);
+bot.guilds.get("496990452369588224").channels.get("506885418512285699").send(suggestion);
+}
 
 });
 
