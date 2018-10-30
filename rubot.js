@@ -7,7 +7,7 @@ const config = require('./config.json');
 // Startup of the bot
 bot.on("ready", async () => {
   console.log(`ok im online on ${bot.guilds.size} servers`);
-  bot.user.setActivity(`Ruby is an epic gamer 😎`, {type: "STREAMING"});
+  bot.user.setActivity(`Serving the whole world or something 😎`, {type: "STREAMING"});
 });
 
 // Commands and other parameters
@@ -23,6 +23,11 @@ bot.on("message", async message => {
 
   if(cmd === `${prefix}test`){
     message.channel.send('crist is gay lol');
+  }
+  if(cmd === `${prefix}help`){
+    let embed = new discord.RichEmbed()
+    .addField(`Commands List (7):`, `>test`, `>help`, `>botinfo`, `>suggest`, `>play`, `leave`, `repo`);
+    message.channel.send(embed);
   }
   if(cmd === `${prefix}botinfo`){
   let embed = new discord.RichEmbed()
