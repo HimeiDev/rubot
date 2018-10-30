@@ -1,5 +1,6 @@
 // Dependencies
 const discord = require('discord.js');
+const ytdl = require('ytdl-core');
 const bot = new discord.Client({disableEveryone: true});
 const config = require('./config.json');
 
@@ -46,8 +47,16 @@ bot.on("message", async message => {
 bot.guilds.get("496990452369588224").channels.get("506885418512285699").send(suggestion);
 }
   if(cmd === `${prefix}play`){
-    
-  }
+   if (!message.member.voiceChannel) return message.channel.send('You are not connected to a voice channel!');
+    if (message.guild.me.voiceChannel) return message.channel.send('I am already connected to a voice channel!');
+    if (!args[0]) return message.channel.send('You must give me a url to the song you would like to listen to!');
+    let valid = await ytdl.validateURL(args[0]);
+    if (!valid) return message.channel.send('This URL is invalid!');
+    let info = await ytdl.getInfo(args[0]);
+    let connect = await message.member.voiceChannel.join();
+    let connection = await connection.playStream(ytdl(args[0], { filter: 'audioonly' }));
+    message.channel.send(`Now Playing: ${info.title}`);
+ }
 
 });
 
