@@ -13,13 +13,15 @@ bot.on("ready", async () => {
 bot.on("message", async message => {
   const prefix = config.prefix;
 
-  if(message.author.bot) return;
-  if(message.channel.type === "dm") return;
-  let messageArray = message.content.split(" ");
+  if(message.author.bot) return; // Ignores bots
+  if(message.channel.type === "dm") return; // Ignores DMs
+  let messageArray = message.content.split(" "); 
   let cmd = messageArray[0];
-  let args = messageArray.slice(1);
+  let args = messageArray.slice(1); 
+  if (!message.content.startsWith(prefix)) return; // Prevents users from using commands with similar prefixes
 
   if(cmd === `${prefix}test`){
+    if(message.author.id !== config.ownerIDS) return;
     message.channel.send('crist is gay lol');
   }
   if(cmd === `${prefix}botinfo`){
@@ -43,6 +45,9 @@ bot.on("message", async message => {
     .setDescription(`${suggestiontext}`);
 bot.guilds.get("496990452369588224").channels.get("506885418512285699").send(suggestion);
 }
+  if(cmd === `${prefix}play`){
+    
+  }
 
 });
 
