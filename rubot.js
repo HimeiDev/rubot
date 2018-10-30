@@ -22,7 +22,6 @@ bot.on("message", async message => {
   if (!message.content.startsWith(prefix)) return; // Prevents users from using commands with similar prefixes
 
   if(cmd === `${prefix}test`){
-    if(message.author.id !== config.ownerIDS) return;
     message.channel.send('crist is gay lol');
   }
   if(cmd === `${prefix}botinfo`){
