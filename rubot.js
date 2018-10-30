@@ -26,7 +26,7 @@ bot.on("message", async message => {
   }
   if(cmd === `${prefix}help`){
     let embed = new discord.RichEmbed()
-    .addField(`Commands List (7):`, `>test`, `>help`, `>botinfo`, `>suggest`, `>play`, `leave`, `repo`);
+    .addField("Commands List (7):", "`>test`, `>help`, `>botinfo`, `>suggest`, `>play`, `leave`, `repo`");
     message.channel.send(embed);
   }
   if(cmd === `${prefix}botinfo`){
