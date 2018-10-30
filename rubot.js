@@ -31,7 +31,7 @@ bot.on("message", async message => {
     .setColor("ff0000")
     .setThumbnail(bot.user.displayAvatarURL)
     .addField("Name", `${bot.user.username}`)
-    .addField("Version", `0.0.1 Pre-Alpha`)
+    .addField("Version", `0.0.2 Alpha`)
     .addField("Developed by", `<@306104099185623042> & <@330863976504229899>`)
     .addField("Created on", "28th of October 2018");
   message.channel.send(embed);
