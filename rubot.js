@@ -37,7 +37,7 @@ bot.on("message", async message => {
     let suggestiontext = args.slice(0).join(" ");
     if (!suggestiontext) return message.channel.send(`Please enter a valid suggestion following the command!`);
     let suggestion = new discord.RichEmbed()
-    .setTitle(`${message.author}`)
+    .setTitle(`<@${message.author.id}>`)
     .setThumbnail(message.author.displayAvatarURL)
     .setColor("ff0000")
     .setDescription(`${suggestiontext}`);
