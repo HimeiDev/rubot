@@ -52,7 +52,7 @@ bot.guilds.get("496990452369588224").channels.get("506885418512285699").send(sug
     let validate = await ytdl.validateURL(args[0]);
     if (!validate) return message.channel.send('This URL is invalid!');
     let info = await ytdl.getInfo(args[0]);
-    let connect = await message.member.voiceChannel.join();
+    let connection = await message.member.voiceChannel.join();
     let dispatcher = await connection.playStream(ytdl(args[0], { filter: 'audioonly' }));
     message.channel.send(`Now Playing: ${info.title}`);
  }
