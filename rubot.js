@@ -64,6 +64,9 @@ bot.guilds.get("496990452369588224").channels.get("506885418512285699").send(sug
     message.guild.me.voiceChannel.leave();
     message.channel.send('bai...~');
   }
+  if(cmd === `${prefix}repo`){
+  message.reply('here is my Github repository link: https://github.com/cristpz/rubot');
+  }
 
 });
 
