@@ -57,6 +57,13 @@ bot.guilds.get("496990452369588224").channels.get("506885418512285699").send(sug
     let connection = await connection.playStream(ytdl(args[0], { filter: 'audioonly' }));
     message.channel.send(`Now Playing: ${info.title}`);
  }
+  if(cmd === `${prefix}leave`){
+  if (!message.member.voiceChannel) return message.channel.send('You are not connected to a voice channel!');
+    if (!message.guild.me.voiceChannel) return message.channel.send('I am not connected to a voice channel, use `>play <URL>` to play something!');
+    if (message.guild.me.voiceChannelID !== message.member.voiceChannelID) return message.channel.send('You are not connected to the same voice channel!');
+    message.guild.me.voiceChannel.leave();
+    message.channel.send('bai...~');
+  }
 
 });
 
