@@ -24,6 +24,7 @@ bot.on("ready", async () => {
       activeNumber = 1;
     } else if (activeNumber === 3) {
       bot.user.setActivity(`with ${bot.users.size} cuties~!`, {type: "PLAYING"});
+      activeNumber = 0;
     }
   }, 10 * 1000); // 1000 defines MS, 3 is the amount of seconds that will be converted in MS
   
