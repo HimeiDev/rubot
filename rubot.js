@@ -87,7 +87,7 @@ bot.guilds.get("496990452369588224").channels.get("506885418512285699").send(sug
   if(cmd === `${prefix}repo`){
   message.reply('here is my Github repository link: https://github.com/cristpz/rubot');
   }
-  if(cmd === `${prefix}hug`{
+  if(cmd === `${prefix}hug`) {
      let {api} = await superagent
      .get(`https://nekos.life/api/v2/img/hug`);
 
