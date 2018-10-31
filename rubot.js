@@ -88,15 +88,16 @@ bot.guilds.get("496990452369588224").channels.get("506885418512285699").send(sug
   message.reply('here is my Github repository link: https://github.com/cristpz/rubot');
   }
   if(cmd === `${prefix}hug`) {
-     let {api} = await superagent
-     .get(`https://nekos.life/api/v2/img/hug`);
+    let {body} = await superagent
+  .get(`https://nekos.life/api/v2/img/hug`);
 
-  let embed = new discord.RichEmbed()
-  .setColor("ff0000")
-  .setTitle(`${message.author.username} hugs ${message.mentions.members.first().user.username}, cuties ^-^`)
-  .setImage(api.url);
+  let hugembed = new discord.RichEmbed()
+  .setColor("#3a0be7")
+  .setTitle(`${message.author.username} hugs ${message.mentions.members.first().user.username}, cute`)
+  .setImage(body.url);
 
-message.channel.send(embed);
+  message.channel.send(hugembed);
+
      }
 
 });
