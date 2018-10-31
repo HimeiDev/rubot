@@ -14,13 +14,13 @@ bot.on("ready", async () => {
   
   setInterval(function() {
     if (activeNumber === 0) {
-      bot.user.setActivity(`cute stuff oki`);
+      bot.user.setActivity(`cute stuff oki`, {type: "WATCHING"});
       activeNumber = 1;
     } else if (activeNumber === 1) {
-      bot.user.setActivity(`cute loli asmr`);
+      bot.user.setActivity(`to cute loli asmr`, {type: "LISTENING"});
       activeNumber = 0;
     }
-  }, 3 = 1000); // 1000 defines MS, 3 is the amount of seconds that will be converted in MS
+  }, 3 * 1000); // 1000 defines MS, 3 is the amount of seconds that will be converted in MS
   
 });
 
