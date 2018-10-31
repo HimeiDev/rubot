@@ -93,7 +93,7 @@ bot.guilds.get("496990452369588224").channels.get("506885418512285699").send(sug
 
   let hugembed = new discord.RichEmbed()
   .setColor("#3a0be7")
-  .setTitle(`${message.author.username} hugs ${message.mentions.members.first().user.username}, cute`)
+  .setTitle(`${message.author.username} hugs ${message.mentions.members.first().user.username}`)
   .setImage(body.url);
 
   message.channel.send(hugembed);
