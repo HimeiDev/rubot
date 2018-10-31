@@ -7,7 +7,20 @@ const config = require('./config.json');
 // Startup of the bot
 bot.on("ready", async () => {
   console.log(`ok im online on ${bot.guilds.size} servers`);
-  bot.user.setActivity(`Serving the whole world or something 😎`, {type: "STREAMING"});
+  bot.user.setActivity(`with ruby ^-^`, {type: "STREAMING"});
+  
+  let activeNumber = 0;
+  
+  setInterval(function() {
+    if (activeNumber === 0) {
+      bot.user.setActivity(`cute stuff oki`, {type: "WATCHING"});
+      activeNumber = 1;
+    } else if (activeNumber === 1) {
+      bot.user.setActivity(`to cute loli asmr`, {type: "LISTENING"});
+      activeNumber = 0;
+    }
+  }, 3 = 1000); // 1000 defines MS, 3 is the amount of seconds that will be converted in MS
+  
 });
 
 // Commands and other parameters
