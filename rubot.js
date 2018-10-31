@@ -1,6 +1,7 @@
 // Dependencies
 const discord = require('discord.js');
 const ytdl = require('ytdl-core');
+const superagent = require("superagent");
 const bot = new discord.Client({disableEveryone: true});
 const config = require('./config.json');
 
@@ -40,7 +41,7 @@ bot.on("message", async message => {
   if(cmd === `${prefix}help`){
     let embed = new discord.RichEmbed()
     .setColor("ff0000")
-    .addField("Commands List (7):", "`>test`, `>help`, `>botinfo`, `>suggest`, `>play`, `>leave`, `>repo`");
+    .addField("Commands List (8):", "`>test`, `>help`, `>botinfo`, `>suggest`, `>play`, `>leave`, `>repo`, `>hug`");
     message.channel.send(embed);
   }
   if(cmd === `${prefix}botinfo`){
@@ -49,7 +50,7 @@ bot.on("message", async message => {
     .setColor("ff0000")
     .setThumbnail(bot.user.displayAvatarURL)
     .addField("Name", `${bot.user.username}`)
-    .addField("Version", `0.0.3 Alpha`)
+    .addField("Version", `0.0.5 Alpha`)
     .addField("Developed by", `<@306104099185623042> & <@330863976504229899>`)
     .addField("Created on", "28th of October 2018");
   message.channel.send(embed);
@@ -63,6 +64,7 @@ bot.on("message", async message => {
     .setColor("ff0000")
     .setDescription(`${suggestiontext}`);
 bot.guilds.get("496990452369588224").channels.get("506885418512285699").send(suggestion);
+    message.reply(`tysm for your suggestion~!`);
 }
   if(cmd === `${prefix}play`){
    if (!message.member.voiceChannel) return message.channel.send('You are not connected to a voice channel!');
@@ -85,6 +87,17 @@ bot.guilds.get("496990452369588224").channels.get("506885418512285699").send(sug
   if(cmd === `${prefix}repo`){
   message.reply('here is my Github repository link: https://github.com/cristpz/rubot');
   }
+  if(cmd === `${prefix}hug`{
+     let {api} = await superagent
+     .get(`https://nekos.life/api/v2/img/hug`);
+
+  let embed = new discord.RichEmbed()
+  .setColor("ff0000")
+  .setTitle(`${message.author.username} hugs ${message.mentions.members.first().user.username}, cuties ^-^`)
+  .setImage(api.url);
+
+message.channel.send(embed);
+     }
 
 });
 
