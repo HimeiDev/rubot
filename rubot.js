@@ -92,7 +92,7 @@ bot.guilds.get("496990452369588224").channels.get("506885418512285699").send(sug
   .get(`https://nekos.life/api/v2/img/hug`);
 
   let hugembed = new discord.RichEmbed()
-  .setColor("#3a0be7")
+  .setColor("ff0000")
   .setTitle(`${message.author.username} hugs ${message.mentions.members.first().user.username}`)
   .setImage(body.url);
 
